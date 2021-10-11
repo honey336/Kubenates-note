@@ -29,7 +29,7 @@ kubectl run my-first-pod --image mylandmarktech/hello --generator=run-pod/v1
   - With **Kubernetes 1.18 version**, there is lot clean-up to **kubectl run** command.
   - The below will suffice to create a Pod as a pod without creating deployment. We dont need to add **--generator=run-pod/v1**
 ```
-kubectl run my-first-pod --image mylandmarktech/hello
+kubectl run my-third-pod --image mylandmarktech/hello
 ```  
 
 ### List Pods
