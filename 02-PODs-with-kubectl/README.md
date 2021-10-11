@@ -184,7 +184,7 @@ kubectl exec -it my-third-pod cat /usr/share/nginx/html/index.html
 ### Get YAML Output
 ```
 # Get pod definition YAML output
-kubectl get pod my-first-pod -o yaml   
+kubectl get pod my-third-pod -o yaml   
 
 # Get service definition YAML output
 kubectl get service my-first-service -o yaml   
