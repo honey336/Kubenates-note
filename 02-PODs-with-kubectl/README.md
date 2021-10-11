@@ -64,7 +64,7 @@ kubectl get pods
 
 # Describe the Pod
 kubectl describe pod <Pod-Name>
-kubectl describe pod my-first-pod 
+kubectl describe pod my-thrird-pod 
 ```
 
 ### Access Application
@@ -80,7 +80,7 @@ kubectl get pods
 
 # Delete Pod
 kubectl delete pod <Pod-Name>
-kubectl delete pod my-first-pod
+kubectl delete pod my-third-pod
 ```
 
 ## Step-03: NodePort Service Introduction
@@ -120,10 +120,10 @@ http://<node1-public-ip>:<Node-Port>
 
 ```
 # Below command will fail when accessing the application, as service port (81) and container port (80) are different
-kubectl expose pod my-first-pod  --type=NodePort --port=81 --name=my-first-service2     
+kubectl expose pod my-third-pod  --type=NodePort --port=81 --name=my-first-service2     
 
 # Expose Pod as a Service with Container Port (--taret-port)
-kubectl expose pod my-first-pod  --type=NodePort --port=81 --target-port=80 --name=my-first-service3
+kubectl expose pod my-third-pod  --type=NodePort --port=81 --target-port=80 --name=my-first-service3
 
 # Get Service Info
 kubectl get service
@@ -146,11 +146,11 @@ kubectl get po
 
 # Dump Pod logs
 kubectl logs <pod-name>
-kubectl logs my-first-pod
+kubectl logs my-third-pod
 
 # Stream pod logs with -f option and access application to see logs
 kubectl logs <pod-name>
-kubectl logs -f my-first-pod
+kubectl logs -f my-third-pod
 ```
 - **Important Notes**
   - Refer below link and search for **Interacting with running Pods** for additional log options
@@ -162,7 +162,7 @@ kubectl logs -f my-first-pod
 ```
 # Connect to Nginx Container in a POD
 kubectl exec -it <pod-name> -- /bin/bash
-kubectl exec -it my-first-pod -- /bin/bash
+kubectl exec -it my-third-pod -- /bin/bash
 
 # Execute some commands in Nginx container
 ls
@@ -176,9 +176,9 @@ exit
 kubectl exec -it <pod-name> env
 
 # Sample Commands
-kubectl exec -it my-first-pod env
-kubectl exec -it my-first-pod ls
-kubectl exec -it my-first-pod cat /usr/share/nginx/html/index.html
+kubectl exec -it my-third-pod env
+kubectl exec -it my-third-pod ls
+kubectl exec -it my-third-pod cat /usr/share/nginx/html/index.html
 ```
 ## Step-06: Get YAML Output of Pod & Service
 ### Get YAML Output
@@ -201,7 +201,7 @@ kubectl delete svc my-first-service2
 kubectl delete svc my-first-service3
 
 # Delete Pod
-kubectl delete pod my-first-pod
+kubectl delete pod my-third-pod
 
 # Get all Objects in default namespace
 kubectl get all
