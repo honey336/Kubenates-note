@@ -97,11 +97,11 @@ kubectl delete pod my-first-pod
 ```
 # Create  a Pod
 kubectl run <desired-pod-name> --image <Container-Image> --generator=run-pod/v1
-kubectl run my-first-pod --image mylandmarktech/hello:4 --generator=run-pod/v1
+kubectl run my-third-pod --image mylandmarktech/hello:4 --generator=run-pod/v1
 
 # Expose Pod as a Service
 kubectl expose pod <Pod-Name>  --type=NodePort --port=80 --name=<Service-Name>
-kubectl expose pod my-first-pod  --type=NodePort --port=80 --name=my-first-service
+kubectl expose pod my-third-pod  --type=NodePort --port=80 --name=my-first-service
 
 # Get Service Info
 kubectl get service
